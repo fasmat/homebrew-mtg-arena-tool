@@ -1,0 +1,42 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  ci-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-10.15]
+
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+        with:
+          test-bot: false
+
+      - name: Cache Homebrew Gems
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+
+      - name: Install Homebrew Gems
+        id: gems
+        run: brew install-bundler-gems
+        if: steps.cache.outputs.cache-hit != 'true'
+
+      - name: MTG Arena Tool
+        run: |
+          brew style --cask ./Casks/mtg-arena-tool.rb
+          brew audit --cask --strict ./Casks/mtg-arena-tool.rb 
+
+          brew install --cask ./Casks/mtg-arena-tool.rb
+          brew uninstall --cask ./Casks/mtg-arena-tool.rb
