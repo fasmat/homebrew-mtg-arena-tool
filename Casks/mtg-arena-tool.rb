@@ -3,7 +3,7 @@
 
 cask "mtg-arena-tool" do
   version "5.5.22"
-  sha256 "3434fcba0ae33645d9e65e9bd63b2bbc6c194badfb2e994176018a3dc35e6491"
+  sha256 :no_check
 
   url "https://github.com/Manuel-777/MTG-Arena-Tool/releases/download/v#{version}/MTG-Arena-Tool-#{version}.pkg",
       verified: "https://github.com/Manuel-777/MTG-Arena-Tool"
