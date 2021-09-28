@@ -2,7 +2,7 @@
 
 [![Build status](https://github.com/fasmat/homebrew-mtg-arena-tool/actions/workflows/main.yml/badge.svg)](https://github.com/fasmat/homebrew-mtg-arena-tool/actions/workflows/main.yml) [![Auto-update casks on new releases](https://github.com/fasmat/homebrew-mtg-arena-tool/actions/workflows/auto-update.yml/badge.svg)](https://github.com/fasmat/homebrew-mtg-arena-tool/actions/workflows/auto-update.yml)
 
-This homebrew tap provides casks for installing [MTG Arena Tool](https://github.com/Manuel-777/MTG-Arena-Tool).
+This homebrew tap provides casks for installing [MTG Arena Tool](https://github.com/mtgatool/mtgatool-desktop).
 
 ## How do I install this formula
 
