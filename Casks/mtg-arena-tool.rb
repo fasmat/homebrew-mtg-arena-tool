@@ -2,11 +2,11 @@
 # frozen_string_literal: true
 
 cask "mtg-arena-tool" do
-  version "5.5.22"
+  version "6.0.9"
   sha256 :no_check
 
-  url "https://github.com/Manuel-777/MTG-Arena-Tool/releases/download/v#{version}/MTG-Arena-Tool-#{version}.pkg",
-      verified: "https://github.com/Manuel-777/MTG-Arena-Tool"
+  url "https://github.com/mtgatool/mtgatool-desktop/releases/download/v#{version}/mtgatool-desktop-#{version}.pkg",
+      verified: "https://github.com/mtgatool/mtgatool-desktop"
   name "MTG Arena Tool"
   desc "Collection browser, deck tracker and statistics manager for MTG Arena"
   homepage "https://mtgatool.com/"
@@ -16,9 +16,9 @@ cask "mtg-arena-tool" do
     strategy :github_latest
   end
 
-  pkg "MTG-Arena-Tool-#{version}.pkg"
+  pkg "mtgatool-desktop-#{version}.pkg"
 
   uninstall pkgutil: [
-    "com.github.manuel777.mtgatool",
+    "com.mtgatool.desktop",
   ]
 end

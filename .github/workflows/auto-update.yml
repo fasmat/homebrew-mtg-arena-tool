@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Fetch latest versions
         run: |-
-          curl "https://api.github.com/repos/Manuel-777/MTG-Arena-Tool/releases" | jq '.[0] | .name' > latest
+          curl "https://api.github.com/repos/mtgatool/mtgatool-desktop/releases" | jq '.[0] | .name' > latest
       - name: Update Casks
         run: |-
           sed -i "s/version .*/version $(cat latest)/g" Casks/mtg-arena-tool.rb
