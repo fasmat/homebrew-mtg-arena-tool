@@ -16,5 +16,5 @@ cask "mtg-arena-tool" do
     strategy :github_latest
   end
 
-  app "mtg.app"
+  app "mtgatool-desktop.app"
 end
