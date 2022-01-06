@@ -5,7 +5,7 @@ cask "mtg-arena-tool" do
   version "6.1.25"
   sha256 :no_check
 
-  url "https://github.com/mtgatool/mtgatool-desktop/releases/download/v#{version}/mtgatool-desktop-#{version}.pkg",
+  url "https://github.com/mtgatool/mtgatool-desktop/releases/download/v#{version}/mtgatool-desktop-#{version}.dmg",
       verified: "https://github.com/mtgatool/mtgatool-desktop"
   name "MTG Arena Tool"
   desc "Collection browser, deck tracker and statistics manager for MTG Arena"
@@ -16,9 +16,5 @@ cask "mtg-arena-tool" do
     strategy :github_latest
   end
 
-  pkg "mtgatool-desktop-#{version}.pkg"
-
-  uninstall pkgutil: [
-    "com.mtgatool.desktop",
-  ]
+  app "mtg.app"
 end
