@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 cask "mtg-arena-tool" do
-  version "6.1.28"
+  version "6.1.31"
   sha256 :no_check
 
   url "https://github.com/mtgatool/mtgatool-desktop/releases/download/v#{version}/mtgatool-desktop-#{version}.dmg",
